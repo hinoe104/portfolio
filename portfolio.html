@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luminous Tools - 自分と向き合うツール集</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Crimson+Pro:wght@300;400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Serif JP', serif;
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f5 100%);
+            color: #2a2a2a;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* ヘッダー */
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .star-accent {
+            color: #d4af37;
+            font-size: 2rem;
+            opacity: 0.6;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #2a2a2a;
+            margin: 20px 0 10px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: #666;
+            font-weight: 300;
+        }
+
+        /* 自己紹介 */
+        .intro {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 80px;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 2;
+        }
+
+        /* ツール一覧 */
+        .tools {
+            display: grid;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.15);
+        }
+
+        .tool-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .tool-icon {
+            font-size: 2rem;
+        }
+
+        .tool-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2a2a2a;
+        }
+
+        .tool-subtitle {
+            font-size: 0.85rem;
+            color: #999;
+            font-weight: 300;
+            margin-top: 5px;
+        }
+
+        .tool-description {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .tool-features {
+            margin-bottom: 20px;
+        }
+
+        .feature {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .feature::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            opacity: 0.6;
+        }
+
+        .tool-link {
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #4a4a4a 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .tool-link:hover {
+            background: linear-gradient(135deg, #d4af37 0%, #f0d77c 100%);
+            transform: translateX(4px);
+        }
+
+        .tool-link.coming-soon {
+            background: #e0e0e0;
+            color: #999;
+            cursor: not-allowed;
+        }
+
+        .tool-link.coming-soon:hover {
+            transform: none;
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .contact {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+            color: #2a2a2a;
+        }
+
+        .contact p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .contact-link {
+            color: #d4af37;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            border-bottom-color: #d4af37;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tool-card {
+                padding: 30px 20px;
+            }
+
+            .tool-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="star-accent">✦</div>
+            <h1>Luminous Tools</h1>
+            <p class="subtitle">自分と向き合うための、小さなツールたち</p>
+        </header>
+
+        <section class="intro">
+            <p>
+                占い、相談、習慣化。<br>
+                それぞれ違うけど、根っこは同じ。<br>
+                「自分を知る」「人を頼る」「形にする」。
+            </p>
+        </section>
+
+        <section class="tools">
+            <!-- Luminous Salon -->
+            <article class="tool-card">
+                <div class="tool-header">
+                    <span class="tool-icon">🔮</span>
+                    <div>
+                        <h2 class="tool-title">Luminous Salon</h2>
+                        <p class="tool-subtitle">タロット・ルノルマン占い</p>
+                    </div>
+                </div>
+                <p class="tool-description">
+                    タロット・ルノルマンのカードをシャッフル・展開できるツール。自分で直感的にリーディングすることも、AIに読んでもらうこともできます。
+                </p>
+                <div class="tool-features">
+                    <div class="feature">無料版：カード展開＋自力リーディング（タロット・ルノルマン両対応）</div>
+                    <div class="feature">AI版（準備中）：3人のリーダーが違う視点で読む／自分でAPIキー設定</div>
+                    <div class="feature">拡張機能（準備中）：オリジナルリーダー、Journal機能</div>
+                </div>
+                <a href="https://hinoe104.github.io/fortune/" class="tool-link" target="_blank">使ってみる →</a>
+            </article>
+
+            <!-- Meguri -->
+            <article class="tool-card">
+                <div class="tool-header">
+                    <span class="tool-icon">☽</span>
+                    <div>
+                        <h2 class="tool-title">Meguri — 巡り</h2>
+                        <p class="tool-subtitle">習慣化アプリ</p>
+                    </div>
+                </div>
+                <p class="tool-description">
+                    いずれ使わなくなることを前提とした習慣化アプリ。習慣が定着したら「卒業」する。それでいい。
+                </p>
+                <div class="tool-features">
+                    <div class="feature">科学的根拠に基づく日数設定（66日/91日）</div>
+                    <div class="feature">記録を1枚の画像として保存（卒業アルバム）</div>
+                    <div class="feature">完全無料</div>
+                </div>
+                <a href="https://hinoe104.github.io/meguri/meguri.html" class="tool-link" target="_blank">使ってみる →</a>
+            </article>
+
+            <!-- 失敗相談シミュレーター -->
+            <article class="tool-card">
+                <div class="tool-header">
+                    <span class="tool-icon">💬</span>
+                    <div>
+                        <h2 class="tool-title">失敗相談シミュレーター</h2>
+                        <p class="tool-subtitle">準備中</p>
+                    </div>
+                </div>
+                <p class="tool-description">
+                    失敗したとき、誰に相談するとどうなるか。上司・同僚・メンター・友人、それぞれ12パターンの反応を体験できます。
+                </p>
+                <div class="tool-features">
+                    <div class="feature">「責任の範囲が見えないから怖い」を解決</div>
+                    <div class="feature">頼り方を学ぶシミュレーション</div>
+                    <div class="feature">企業研修向けバージョンも検討中</div>
+                </div>
+                <a href="#" class="tool-link coming-soon">Coming Soon</a>
+            </article>
+        </section>
+
+        <section class="contact">
+            <h2>お問い合わせ</h2>
+            <p>
+                お仕事のご依頼、フィードバック等ありましたら<br>
+                X（Twitter）または<a href="https://forms.gle/pV5Xpm13ybHYWXmt6" class="contact-link" target="_blank">Googleフォーム</a>からどうぞ。
+            </p>
+        </section>
+
+        <footer>
+            <p style="margin-bottom: 10px;">Made by 占原イチカ（urhr-ick）</p>
+            <p style="font-size: 0.8rem; color: #bbb; margin-bottom: 20px;">AIによるアプリ開発×占い師</p>
+            <p>© 2025 Luminous Tools. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
