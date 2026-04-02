@@ -9,21 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Shippori+Mincho:wght@400;600;700&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
     <style>
 :root {
-    --bg: #0e0d0b;
-    --surface: #161410;
-    --gold: #C5A059;
-    --gold-dim: rgba(197,160,89,0.15);
-    --gold-line: rgba(197,160,89,0.25);
-    --text: #f0ece4;
-    --text-muted: #b8ad9a;
-    --text-dim: #6a5f50;
+    --bg: #fdf6ef;
+    --surface: #f5ede2;
+    --gold: #c4704a;
+    --gold-dim: rgba(196,112,74,0.12);
+    --gold-line: rgba(196,112,74,0.28);
+    --text: #2d1f14;
+    --text-muted: #7a5c4a;
+    --text-dim: #c4a882;
     --font-en: 'Cormorant Garamond', serif;
     --font-jp: 'Shippori Mincho', serif;
     --font-mono: 'DM Mono', monospace;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; color-scheme: dark; }
+html { scroll-behavior: smooth; color-scheme: light; }
 
 body {
     background: var(--bg);
@@ -41,7 +41,7 @@ body::before {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
     pointer-events: none;
     z-index: 0;
-    opacity: 0.4;
+    opacity: 0.15;
 }
 
 /* === HERO === */
@@ -431,7 +431,7 @@ footer {
 <!-- HERO -->
 <div class="hero">
     <p class="hero-eyebrow">Portfolio</p>
-    <h1 class="hero-name">Ichika<br>Uranohara</h1>
+    <h1 class="hero-name">Ichika<br>Urahara</h1>
     <p class="hero-name-jp">占原 イチカ</p>
     <div class="hero-tags">
         <span class="tag">占い師</span>
@@ -483,19 +483,17 @@ footer {
             <div class="work-number">01</div>
             <p class="work-type">Web App</p>
             <p class="work-name">Luminous<br>Salon</p>
-            <p class="work-name-jp">AIタロット占い</p>
+            <p class="work-name-jp">タロット占いアプリ</p>
         </div>
         <div class="work-content">
             <p class="work-tagline">占いはジャッジじゃない。<br>善悪を超えたところにある。</p>
-            <p class="work-body">中上級者向けのAIタロット・ルノルマン占いアプリ。ユーザー自身のAPIキーを使う設計で、相談内容は運営サーバーに残らない。AIはカードの結果に忠実に読み、道徳的評価をしない。3人のキャラクターがそれぞれの口調でリーディングする。</p>
+            <p class="work-body">自分でカードを読める人のためのタロット・ルノルマン占いアプリ。キーワードや解説は一切表示しない。カードと向き合う空間だけを提供する設計で、「お節介をしない」を徹底した。有料版ではユーザー自身のAPIキーを使ったAI鑑定機能を実装予定。</p>
             <ul class="work-points">
-                <li>ユーザー自身のOpenRouter APIキーで動作。運営への従属なし</li>
-                <li>「ジャッジしない」をsystem promptレベルで設計</li>
-                <li>レン・ミハル・カズコ、3キャラクターによる差別化されたリーディング</li>
-                <li>特商法・プライバシーポリシー・利用規約まで一貫して設計</li>
-                <li>バラ課金＋全部入りプランによる収益設計</li>
+                <li>解説・キーワード表示なし。中上級者が自分のペースで読む設計</li>
+                <li>「ジャッジしない」をコンセプトの核に据えた</li>
+                <li>有料版：ユーザー自身のAPIキーで動作、運営サーバーへの送信ゼロの収益設計を検討中</li>
             </ul>
-            <a class="work-link" href="luminous-reading.html">アプリを見る →</a>
+            <a class="work-link" href="https://hinoe104.github.io/index.html/" target="_blank">無料版を試す →</a>
         </div>
     </div>
 
@@ -512,9 +510,10 @@ footer {
             <ul class="work-points">
                 <li>「依存させない」を出発点にした設計思想</li>
                 <li>実行意図・プリコミットメントなど習慣化の科学的根拠をプリセットに実装</li>
-                <li>月の満ち欠けをモチーフにしたUI・アニメーション</li>
+                <li>ダークモードは月、ライトモードは桜——達成時の演出がテーマで変わる</li>
                 <li>達成画面・アルバム機能で継続の記録を可視化</li>
             </ul>
+            <a class="work-link" href="https://hinoe104.github.io/meguri/index.html" target="_blank">アプリを見る →</a>
         </div>
     </div>
 
@@ -573,23 +572,19 @@ footer {
     <p class="section-label">Contact</p>
     <p class="contact-body">プロダクト設計・UX思想・課金設計など、ご相談はお気軽にどうぞ。占い鑑定のご依頼もこちらから。</p>
     <div class="contact-links">
-        <a class="contact-link" href="https://twitter.com/urhr_ick" target="_blank">
+        <a class="contact-link" href="https://twitter.com/ick_urhr" target="_blank">
             <span class="contact-link-label">X / Twitter</span>
-            <span class="contact-link-text">@urhr_ick</span>
+            <span class="contact-link-text">@ick_urhr</span>
         </a>
         <a class="contact-link" href="https://line.me/R/ti/p/@656htpns" target="_blank">
             <span class="contact-link-label">LINE</span>
             <span class="contact-link-text">鑑定のご依頼はこちら（30分/3,000円・60分/5,000円）</span>
         </a>
-        <a class="contact-link" href="mailto:info@luminous-salon.example">
-            <span class="contact-link-label">Mail</span>
-            <span class="contact-link-text">info@luminous-salon.example（※仮）</span>
-        </a>
     </div>
 </section>
 
 <footer>
-    &copy; 2025 Uranohara Ichika — All rights reserved.
+    &copy; 2025 Urahara Ichika — All rights reserved.
 </footer>
 
 </body>
